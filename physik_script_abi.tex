@@ -1,0 +1,146 @@
+\documentclass[a4paper,12pt,twoside,openany]{scrbook}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{srcltx}
+\usepackage{multicol}
+%\usepackage{wrapfig}
+\usepackage{subfigure}
+
+%\pagestyle{myheadings}
+
+%\usepackage{hyperref}
+
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,bookmarksnumbered=true,breaklinks=true,pdfstartview=FitH]{hyperref}
+
+% Schriftart: Palatino
+%\usepackage{mathpazo}
+%\linespread{1.05}
+
+
+	%Index
+\usepackage{makeidx}
+\makeindex
+\newcommand{\ind}[1]{#1 \index{#1} }
+
+\author{Michael Kopp}
+\date{1. Auflage}
+\title{Physik\\der Oberstufe}
+
+\begin{document}
+
+\maketitle
+
+\addchap*{Dieses Buch}
+
+\begin{quote}
+Hier präsentiere ich Ihnen stolz mein Physik-Script. Für die Oberstufe habe ich vor jeder anstehenden Klausur für mich eine Zusammenfassung erstellt -- und weil ich diese Zusammenfassungen in \LaTeX\ tippte, konnte ich sie für meine Mitschüler verfügbar machen. So bekam ich nicht nur ein gutes Feedback, sondern unser Kurs wohl teilweise einen besseren Schnitt\dots
+
+Ich habe das Werk in mehrere große Themen aufgeteilt, die mehr oder weniger unabhängig voneinander dastehen. Was mir aber wichtig ist, ist die Verknüpfung des Wissens bzw. der Informationen \emph{innerhalb} der Unterabschnitte. So wird man auf zahlreiche Referenzen und Verweise stoßen, die einfach zeigen sollen, dass ein ähnlicher Inhalt schon unter einem anderen Gesichtspunkt abgehandelt worden war -- hier besteht also eine Inhaltliche Verknüpfung.
+Darüber hinaus endet dieses Buch mit einem seitenlangen Index, in dem man die wichtigsten Begriffe finden kann und die dazugehörige Seite sieht.
+
+Wie oben schon angedeutet: Ich habe all das hier am PC getippt -- und zwar sehe ich beim Schreiben nur schlichte \texttt{Courier-Schrift}. Besonders bei Formeln können sich da Fehler eingeschlichen haben. Aber auch sonst wimmelt diese Buch vermutlich von kleineren bis übermittelgroßen Fehlern. Manchmal habe ich auch versucht, Sachverhalte \emph{besser} als unser Buch bzw. unser Lehrer zu erklären. Dabei sind manchmal etwas seltsame und anspruchsvolle Gedankengänge entstanden, und ich hoffe, ich konnte diese vernünftig entwickeln, sodass der leser auch etwas davon hat. Hier findet der interessierte Leser auch Formeln und Details, die im Unterricht (zumindest bei uns) keinen Platz hatten, von denen ich aber denke, dass sie interessant sein könnten und das Thema abrunden. In diesem Werk wurden diejenigen meiner Praktika aufgenommen, die lehrreich sind; so haben es eben nur wenige geschafft, hier aufgenommen zu werden...
+
+Insgesamt denke ich, dass man mit diesem Buch ganz vernünftig aufs Abi lernen könnte -- mir blieb das erspart, weil im entscheidenden Moment meine Affinität zur Chemie überwog.
+
+Auf jeden Fall bitte ich herzlich darum, sich nicht allzusehr über die Fehler aufzuregen, sondern sich stattdessen über den richtigen Rest zu freuen. Viel Spaß bei der Lektüre.
+
+\begin{flushright}
+     Michael Kopp, im August 2008
+\end{flushright}
+
+
+\end{quote}
+
+
+
+\newpage
+
+
+\tableofcontents
+
+\sloppy
+
+\part{E-Feld}
+\input{E-feld.tex}
+%\cleardoublepage
+
+\part{B-Feld}
+\input{B-Feld.tex}
+%\cleardoublepage
+\part{Schwingungen}
+\input{schwingungen.tex}
+%\cleardoublepage
+\part{Wellen}
+\input{wellen.tex}
+%\cleardoublepage
+\part{Quantenphysik}
+\input{quantenphysik.tex}
+%\cleardoublepage
+
+
+
+
+
+
+
+
+\begin{appendix}
+
+
+
+\part{Praktika}
+\chapter{Induktion}
+\input{praktika/induktion.tex}
+
+\chapter{Versuche zur Schallgeschwindigkeit}
+\input{praktika/schallgeschwindigkeit.tex}
+
+\chapter{Versuche zu Ultraschall I}
+\input{praktika/ultraschallA.tex}
+
+\chapter{Versuche zu Ultraschall II}
+\input{praktika/ultraschallB.tex}
+
+\chapter{Bestimmung des Planck'schen Wirkungsquantums}
+\input{praktika/wirkungsquantum.tex}
+
+
+
+\part{Index}
+ \chapter*{}
+ \section*{}
+ \subsection*{}
+     \input{appendix.tex}
+
+
+   \newcommand{\orgtheindex}{}
+ \let\orgtheindex\theindex
+ \let\orgendtheindex\endtheindex
+ \def\theindex{%
+	\def\twocolumn{\begin{multicols}{3}}%
+	\def\onecolumn{}%
+	\clearpage
+	\orgtheindex
+ }
+ \def\endtheindex{%
+	\end{multicols}%
+	\orgendtheindex
+	\clearpage
+ }
+
+% \begin{small}
+% \printindex
+% \end{small}
+
+\begin{footnotesize}
+\printindex
+\end{footnotesize}
+
+\end{appendix}
+
+
+\end{document}

@@ -1,0 +1,9 @@
+# temporary files from latex
+*.aux
+*.dvi
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.toc
